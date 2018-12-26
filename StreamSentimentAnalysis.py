@@ -20,8 +20,10 @@ auth.set_access_token(key=ACCESS_KEY, secret=ACCESS_SECRET)
 api = tweepy.API(auth, retry_count=3, retry_delay=5, retry_errors=([401, 404, 500, 503]))
 
 # Setup variables
+# Handle defines a particular handle that you must be mentioned, e.g. a tweet reply (RTs are excluded)
+# keywords describe words that may be included in the tweet
 handle = ''
-keywords = ['election', 'Buhari']
+keywords = ['Buhari']
 
 class StreamListener(tweepy.StreamListener):
 
