@@ -8,7 +8,8 @@ for tweet in db['tweets']:
 
 pd.DataFrame.from_dict(outputDict, orient='index', columns=['id_str', 'user_name', 'created', 'text', 'polarity', 'subjectivity']).to_csv('.vscode/output.csv')
 
-""" 
+"""  # If you intend to use csv and sqlite3 instead
+import csv, sqlite3
 conn = sqlite3.connect('.vscode/streamSentimentAnalysis.db')
 cur = conn.cursor()
 
