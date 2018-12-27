@@ -59,17 +59,10 @@ class StreamListener(tweepy.StreamListener):
         table = db["tweets"]
         try:
             table.insert(dict(
-                user_description=description,
-                user_location=loc,
-                coordinates=coords,
-                text=text,
-                user_name=name,
-                user_created=user_created,
-                user_followers=followers,
                 id_str=id_str,
+                user_name=name,
                 created=created,
-                retweet_count=retweets,
-                user_bg_color=bg_color,
+                text=text,
                 polarity=sentiment.polarity,
                 subjectivity=sentiment.subjectivity,
             ))
